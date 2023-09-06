@@ -1,0 +1,13 @@
+0.6 New note in Single page app diagram
+
+
+// After submitting new note
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: {content: "moiiii", date: "2023-09-06T13:36:55.876Z"}
+    deactivate server
