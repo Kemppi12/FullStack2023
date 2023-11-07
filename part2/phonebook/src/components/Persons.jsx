@@ -1,10 +1,15 @@
-const Persons = ({ persons }) => {
+const Persons = ({ persons , handleDelete }) => {
   return (
     <div>
       <ul>
-        {persons.map((person, index) => (
-          <li key={index}>
-            {person.name} {person.number}
+        {persons.map((person) => (
+          <li key={person.id}>
+            {person.name} {person.number} 
+            <button onClick= {() => {              
+              if(window.confirm (`Delete ${person.name}?`)) {
+                handleDelete(person.id)
+              }
+            }}>Delete</button>            
           </li>
         ))}
       </ul>
